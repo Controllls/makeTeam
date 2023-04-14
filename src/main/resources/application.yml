@@ -1,0 +1,33 @@
+spring:
+
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/pdf
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        format_sql: true
+
+
+  profiles:
+    include: oauth
+
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+server:
+  port : 8080
+
+logging:
+  level:
+    org.hibernate.SQL: debug #로그로 찍음
+    org.hibernate.type: trace
+
+

@@ -1,0 +1,9 @@
+spring:
+  OAuth2:
+    google:
+      url: https://accounts.google.com/o/oauth2/v2/auth
+      client-id: 72123284037-vjr7sscf4h713bhsfsk6ecrn4gonc627.apps.googleusercontent.com
+      client-secret: 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
+      callback-url: http://localhost:8080/auth/google/callback
+      scope: https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile
+      BaseURL : https://oauth2.googleapis.com/token

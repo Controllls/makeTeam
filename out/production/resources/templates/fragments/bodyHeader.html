@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<div class="header" th:fragment="bodyHeader">
+  <div>
+    <a th:if="${#strings.isEmpty(member.id)}" href="/auth/google">로그인</a>
+    <a th:if="${#strings.isEmpty(member.id)}" href="/auth/google">글쓰기</a>
+    <a th:if="${not #strings.isEmpty(member.id)}" th:text="|${member.nickName} 님 어서오세요|"></a>
+    <a th:if="${not   #strings.isEmpty(member.id)}" href="/uploads/inputForm">글쓰기</a>
+    <a th:if="${not #strings.isEmpty(member.id)}" href="/logout">로그아웃</a>
+  </div>
+  <a href="/"><h3 class="text-muted">팀원구하기</h3></a>
+</div>

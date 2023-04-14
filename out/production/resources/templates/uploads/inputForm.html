@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header">
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+    <div class="container">
+        <div th:replace="fragments/bodyHeader :: bodyHeader" />
+    </div>
+    <main>
+        <div class="container">
+            <form action="../">
+            <h5>➊ 프로젝트 기본 정보를 입력해주세요 !</h5>
+            <hr />
+            <a >프로젝트 구분</a>
+            <br/>
+
+            <button class="btn btn-outline-secondary" type="button" id="btn1" value="공모전">공모전</button>
+            <button class="btn btn-outline-secondary" type="button" id="btn2" value="대외활동">대외활동</button>
+            <button class="btn btn-outline-secondary" type="button" id="btn3" value="팀프로잭트">팀프로잭트</button>
+            <br/>
+
+            <a> 프로젝트 상세정보</a>
+            <br/>
+
+            <div>
+                <input type="text" placeholder="공모전/대외활동 이름을 입력해주세요" style="width:450px;"/>
+
+                <button class="btn btn-outline-secondary" type="button" id="btn11" value="전체 카테고리에서 선택">전체 카테고리에서 선택</button>
+            </div>
+            <br/>
+            <h5>➋ 멤버 모집 정보를 입력해주세요!</h5>
+            <hr/>
+            <a>모집인원</a>
+            <br/>
+            <select name="number" required style="select option[value=''][disabled] {
+                display: none;
+                }">
+                <option value="" selected>인원미정 ~ 10명 이상</option>
+                <option value="not">미정</option>
+                <option value="one">1</option>
+                <option value="two">2</option>
+                <option value="three">3</option>
+                <option value="four">4</option>
+                <option value="five">5</option>
+                <option value="six">6</option>
+                <option value="seven">7</option>
+                <option value="eight">8</option>
+                <option value="nine">9</option>
+                <option value="ten">10</option>
+            </select>
+            <hr/>
+            <a>모집 부문</a>
+            <br/>
+                <button class="btn btn-outline-secondary" id="btn4" value="공모전">기획자</button>
+                <button class="btn btn-outline-secondary" id="btn5" value="공모전">디자이너</button>
+                <button class="btn btn-outline-secondary" id="btn6" value="공모전">개발자</button>
+
+
+            <br/>
+            <a>담당 업무</a>
+            <br/>
+            <div>
+                <input  type="text" placeholder="담당업무 키워드를 입력해주세요 (ex. 포토샾)" style="width:450px;">
+                <button class="btn btn-outline-secondary" type="button" id="btn12" value="전체 카테고리에서 선택">전체 카테고리에서 선택</button>
+            </div>
+            <hr/>
+                <div class="container overflow-hidden text-center">
+                    <div class="row gx-5">
+                        <div class="col">
+                            <div align="left">진행 방식</div>
+                            <select name="number" required style="select option[value=''][disabled] {
+                display: none;
+                }">
+                                <option value="" selected>인원미정 ~ 10명 이상</option>
+                                <option value="not">미정</option>
+                                <option value="one">1</option>
+                                <option value="two">2</option>
+                                <option value="three">3</option>
+                                <option value="four">4</option>
+                                <option value="five">5</option>
+                                <option value="six">6</option>
+                                <option value="seven">7</option>
+                                <option value="eight">8</option>
+                                <option value="nine">9</option>
+                                <option value="ten">10</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <div align="left">시작 예정일</div>
+                            <div class="p-3 border">Calendar</div>
+                        </div>
+                    </div>
+                </div>
+                <a>우대 사항</a>
+                <br/>
+                <div>
+                    <input type="text" placeholder=" 우대사항을 직접 입력해주세요 ! (ex.수도권 거주하시는 분을 우대합니다 !)" style="width:550px;"/>
+                    <button class="btn btn-outline-secondary" type="button" id="btn13">입력</button>
+                </div>
+                <br/>
+
+                <h5>➌ 자신을 어필해보세요</h5>
+                <hr />
+                <br/><br/><br/>
+                <input type="submit" value="저장" onclick="alert('제출 완료!')"/>
+            </form>
+        </div>
+
+    </main>
+    <script>
+        document.getElementById("btn1").onclick = function(){
+            this.className = "btn btn-secondary"
+            document.getElementById("btn2").className = "btn btn-outline-secondary"
+            document.getElementById("btn3").className = "btn btn-outline-secondary"
+        };
+
+        document.getElementById("btn2").onclick = function(){
+            this.className = "btn btn-secondary"
+            document.getElementById("btn1").className = "btn btn-outline-secondary"
+            document.getElementById("btn3").className = "btn btn-outline-secondary"
+        };
+        document.getElementById("btn3").onclick = function(){
+            this.className = "btn btn-secondary"
+            document.getElementById("btn1").className = "btn btn-outline-secondary"
+            document.getElementById("btn2").className = "btn btn-outline-secondary"
+        };
+    </script>
+</body>
+</html>
